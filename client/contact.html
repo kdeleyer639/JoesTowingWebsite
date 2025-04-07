@@ -1,10 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joe's Towing | Contact</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://kit.fontawesome.com/6a3880a3d7.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+<!-- Header & Navigation -->
+<header id="main-header">
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h1>Contact Us</h1>
+    <section class="contact-info">
+        <p><strong>Address:</strong> Located at East Hampton NY 11937</p>
+        <p><strong>Phone:</strong> <a href="tel:6312761056">(631) 276-1056</a></p>
+        <p><strong>Email:</strong> <a href="mailto:joestowing2024@gmail.com">joestowing2024@gmail.com</a></p>
+    </section>
+
+    <!-- Example contact form that sends an email or stores data in your DB -->
+    <section class="contact-form">
+        <h2>Send Us a Message</h2>
+        <form action="/api/send-email" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" required />
+
+            <label for="phone">Phone:</label>
+            <input type="tel" name="phone" id="phone" required />
+
+            <label for="message">Message:</label>
+            <textarea name="message" id="message" rows="4"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Joe’s Towing. All rights reserved.</p>
+</footer>
 
 </body>
 </html>

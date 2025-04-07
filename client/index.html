@@ -2,10 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Joe's Towing - 24/7 towing and roadside assistance." />
-    <meta name="keywords" content="Towing, Roadside Assistance, Tow Truck" />
+    <!-- Updated description and keywords -->
+    <meta name="description" content="Joe's Towing - 24/7 Towing and Beach Recovery." />
+    <meta name="keywords" content="Towing, Beach Recovery, Tow Truck" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Joe's Towing | 24/7 Towing & Roadside Assistance</title>
+
+    <!-- Page Title -->
+    <title>Joe's Towing | 24/7 Towing & Beach Recovery</title>
+
+    <!-- Your Font Awesome Kit (Replace with your actual kit ID if it differs) -->
+    <script src="https://kit.fontawesome.com/6a3880a3d7.js" crossorigin="anonymous"></script>
+
+    <!-- Your custom stylesheet -->
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -13,15 +21,24 @@
 <!-- Top Bar -->
 <div class="top-bar">
     <div class="top-bar-left">
-        <p class="top-bar-address">123 Main Street, Townsville</p>
+        <!-- Address with location icon -->
+        <p class="top-bar-address">
+            <i class="fa-solid fa-location-dot"></i>
+            Located at East Hampton NY 11937
+        </p>
     </div>
     <div class="top-bar-right">
-        <!-- Updated Phone Number -->
+        <!-- Phone line with phone icon -->
         <p class="top-bar-phone">
-            Call Us: <a href="tel:6312761056">(631) 276-1056</a>
+            Call Us:
+            <a href="tel:6312761056">
+                <i class="fa-solid fa-phone-volume"></i> (631) 276-1056
+            </a>
         </p>
-        <!-- Updated "Call Now" Button -->
-        <a href="tel:6312761056" class="btn-call-now">Call Now</a>
+        <!-- "Call Now" Button -->
+        <a href="tel:6312761056" class="btn-call-now">
+            <i class="fa-solid fa-phone"></i> Call Now
+        </a>
     </div>
 </div>
 
@@ -29,11 +46,12 @@
 <header id="main-header">
     <nav class="main-nav">
         <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
+
     </nav>
 </header>
 
@@ -41,10 +59,10 @@
 <section id="hero" class="hero-section">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-        <h1>24/7 Towing &amp; Roadside Assistance</h1>
+        <h1>24/7 Towing &amp; Beach Recovery</h1>
         <p>Fast, Reliable, and Always Available.</p>
 
-        <!-- Example Form pointing to your back end (or use fetch/AJAX) -->
+        <!-- Contact/Request Form -->
         <form class="hero-form" action="http://localhost:3001/api/request-service" method="POST">
             <input type="text" name="name" placeholder="Your Name" required />
             <input type="tel" name="phone" placeholder="Your Phone" required />
@@ -58,15 +76,21 @@
     <h2>Our Services</h2>
     <div class="services-container">
         <div class="service-item">
-            <h3>Towing</h3>
+            <h3>
+                <i class="fa-solid fa-truck-pickup"></i> Towing
+            </h3>
             <p>Local and long-distance towing for cars, trucks, and more.</p>
         </div>
         <div class="service-item">
-            <h3>Roadside Assistance</h3>
-            <p>Lockout services, jumpstarts, tire changes, and fuel delivery.</p>
+            <h3>
+                <i class="fa-solid fa-umbrella-beach"></i> Beach Recovery
+            </h3>
+            <p>Specialized assistance for vehicles stuck in the sand along our beautiful beaches.</p>
         </div>
         <div class="service-item">
-            <h3>Auto Recovery</h3>
+            <h3>
+                <i class="fa-solid fa-car-crash"></i> Auto Recovery
+            </h3>
             <p>Safe vehicle recovery from accidents or breakdowns.</p>
         </div>
     </div>
@@ -75,24 +99,31 @@
 <!-- About Section -->
 <section id="about" class="about-section">
     <h2>About Joe's Towing</h2>
-    <p>We have been serving Townsville and the surrounding areas for over 10 years. Our mission is to provide reliable, affordable, and friendly towing services whenever you need us.</p>
+    <p>
+        We have been serving customers for over 10 years. Our mission is to provide reliable,
+        affordable, and friendly towing services whenever you need us.
+    </p>
 </section>
 
 <!-- Contact Section -->
 <section id="contact" class="contact-section">
     <h2>Contact Us</h2>
     <p>
-        <strong>Address:</strong> 123 Main Street, Townsville
+        <strong>Address:</strong>
+        <i class="fa-solid fa-location-dot"></i>
+        Located at East Hampton NY 11937
     </p>
     <p>
         <strong>Phone:</strong>
-        <!-- Updated Phone -->
-        <a href="tel:6312761056">(631) 276-1056</a>
+        <a href="tel:6312761056">
+            <i class="fa-solid fa-phone-volume"></i> (631) 276-1056
+        </a>
     </p>
     <p>
         <strong>Email:</strong>
-        <!-- Updated Email -->
-        <a href="mailto:joestowing2024@gmail.com">joestowing2024@gmail.com</a>
+        <a href="mailto:joestowing2024@gmail.com">
+            <i class="fa-solid fa-envelope"></i> joestowing2024@gmail.com
+        </a>
     </p>
 </section>
 
@@ -102,6 +133,7 @@
     <p>Designed by [Your Name]</p>
 </footer>
 
+<!-- If you have a main.js file for custom JavaScript -->
 <script src="client/js/main.js"></script>
 </body>
 </html>

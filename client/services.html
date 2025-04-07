@@ -1,10 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joe's Towing | Services</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://kit.fontawesome.com/6a3880a3d7.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+<!-- Header & Navigation -->
+<header id="main-header">
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h1>Our Services</h1>
+    <section class="services-section">
+        <div class="service-item">
+            <h2><i class="fa-solid fa-truck-pickup"></i> Towing</h2>
+            <p>Local and long-distance towing for cars, trucks, and more.</p>
+        </div>
+        <div class="service-item">
+            <h2><i class="fa-solid fa-umbrella-beach"></i> Beach Recovery</h2>
+            <p>Specialized assistance for vehicles stuck in the sand.</p>
+        </div>
+        <div class="service-item">
+            <h2><i class="fa-solid fa-car-crash"></i> Auto Recovery</h2>
+            <p>Safe vehicle recovery from accidents or breakdowns.</p>
+        </div>
+        <!-- Add more services as needed -->
+    </section>
+
+    <!-- Example "Book Tow" Form referencing your server's route -->
+    <section>
+        <h2>Need a Tow Right Now?</h2>
+        <form action="/api/book-tow" method="POST">
+            <label for="vehicle">Vehicle Type:</label>
+            <input type="text" name="vehicle" id="vehicle" required />
+
+            <label for="location">Location:</label>
+            <input type="text" name="location" id="location" required />
+
+            <button type="submit">Book Tow</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Joe’s Towing. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
