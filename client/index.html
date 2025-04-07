@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Joe's Towing - 24/7 towing and roadside assistance." />
+    <meta name="keywords" content="Towing, Roadside Assistance, Tow Truck" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joe's Towing | 24/7 Towing & Roadside Assistance</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+    <div class="top-bar-left">
+        <p class="top-bar-address">123 Main Street, Townsville</p>
+    </div>
+    <div class="top-bar-right">
+        <!-- Updated Phone Number -->
+        <p class="top-bar-phone">
+            Call Us: <a href="tel:6312761056">(631) 276-1056</a>
+        </p>
+        <!-- Updated "Call Now" Button -->
+        <a href="tel:6312761056" class="btn-call-now">Call Now</a>
+    </div>
+</div>
+
+<!-- Header & Navigation -->
+<header id="main-header">
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section id="hero" class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>24/7 Towing &amp; Roadside Assistance</h1>
+        <p>Fast, Reliable, and Always Available.</p>
+
+        <!-- Example Form pointing to your back end (or use fetch/AJAX) -->
+        <form class="hero-form" action="http://localhost:3001/api/request-service" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="tel" name="phone" placeholder="Your Phone" required />
+            <button type="submit">Request Service</button>
+        </form>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="services-section">
+    <h2>Our Services</h2>
+    <div class="services-container">
+        <div class="service-item">
+            <h3>Towing</h3>
+            <p>Local and long-distance towing for cars, trucks, and more.</p>
+        </div>
+        <div class="service-item">
+            <h3>Roadside Assistance</h3>
+            <p>Lockout services, jumpstarts, tire changes, and fuel delivery.</p>
+        </div>
+        <div class="service-item">
+            <h3>Auto Recovery</h3>
+            <p>Safe vehicle recovery from accidents or breakdowns.</p>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section">
+    <h2>About Joe's Towing</h2>
+    <p>We have been serving Townsville and the surrounding areas for over 10 years. Our mission is to provide reliable, affordable, and friendly towing services whenever you need us.</p>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+    <h2>Contact Us</h2>
+    <p>
+        <strong>Address:</strong> 123 Main Street, Townsville
+    </p>
+    <p>
+        <strong>Phone:</strong>
+        <!-- Updated Phone -->
+        <a href="tel:6312761056">(631) 276-1056</a>
+    </p>
+    <p>
+        <strong>Email:</strong>
+        <!-- Updated Email -->
+        <a href="mailto:joestowing2024@gmail.com">joestowing2024@gmail.com</a>
+    </p>
+</section>
+
+<!-- Footer -->
+<footer id="main-footer">
+    <p>&copy; <span id="year"></span> Joe's Towing. All Rights Reserved.</p>
+    <p>Designed by [Your Name]</p>
+</footer>
+
+<script src="client/js/main.js"></script>
+</body>
+</html>
