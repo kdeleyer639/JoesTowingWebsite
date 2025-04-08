@@ -2,45 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
+    <meta name="description" content="Joe's Towing - Our Services" />
+    <meta name="keywords" content="Towing, Beach Recovery, Equipment Hauling, Jumpstarts, Battery Charges, Tire Changes" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Joe's Towing | Services</title>
-    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Favicon (ensure favicon.ico exists in images/) -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <!-- Font Awesome Kit -->
     <script src="https://kit.fontawesome.com/6a3880a3d7.js" crossorigin="anonymous"></script>
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-<!-- Header & Navigation -->
+<!-- Header Section with Brand (Logo & Text) and Navigation -->
 <header id="main-header">
-    <nav class="main-nav">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html" class="active">Services</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+    <div class="header-container">
+        <!-- Brand: Logo + Text -->
+        <div class="brand">
+            <a href="index.html">
+                <img src="images/logo.JPG" alt="Joe's Towing & Recovery" class="logo-img" />
+                <span class="brand-text">Joe's Towing & Recovery</span>
+            </a>
+        </div>
+        <!-- Navigation on the Right -->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
 <main>
     <h1>Our Services</h1>
     <section class="services-section">
-        <div class="service-item">
-            <h2><i class="fa-solid fa-truck-pickup"></i> Towing</h2>
-            <p>Local and long-distance towing for cars, trucks, and more.</p>
+        <div class="services-container">
+            <!-- Existing Service Items -->
+            <div class="service-item">
+                <h2><i class="fa-solid fa-truck-pickup"></i> Towing</h2>
+                <p>Local and long-distance towing for cars, trucks, and more.</p>
+            </div>
+            <div class="service-item">
+                <h2><i class="fa-solid fa-umbrella-beach"></i> Beach Recovery</h2>
+                <p>Specialized assistance for vehicles stuck in the sand along our beautiful beaches.</p>
+            </div>
+            <div class="service-item">
+                <h2><i class="fa-solid fa-car-crash"></i> Auto Recovery</h2>
+                <p>Safe vehicle recovery from accidents or breakdowns.</p>
+            </div>
+            <!-- Additional Service Items -->
+            <div class="service-item">
+                <h2><i class="fa-solid fa-truck-moving"></i> Equipment Hauling</h2>
+                <p>Professional hauling of heavy equipment and machinery.</p>
+            </div>
+            <div class="service-item">
+                <h2><i class="fa-solid fa-bolt"></i> Jumpstarts</h2>
+                <p>Quick battery jumpstarts to get you back on the road fast.</p>
+            </div>
+            <div class="service-item">
+                <h2><i class="fa-solid fa-battery-full"></i> Battery Charges</h2>
+                <p>Battery charging and replacement services to keep your vehicle powered up.</p>
+            </div>
+            <div class="service-item">
+                <h2><i class="fa-solid fa-screwdriver-wrench"></i> Tire Changes &amp; Plugs</h2>
+                <p>Efficient tire changes, repairs, and plug services.</p>
+            </div>
         </div>
-        <div class="service-item">
-            <h2><i class="fa-solid fa-umbrella-beach"></i> Beach Recovery</h2>
-            <p>Specialized assistance for vehicles stuck in the sand.</p>
-        </div>
-        <div class="service-item">
-            <h2><i class="fa-solid fa-car-crash"></i> Auto Recovery</h2>
-            <p>Safe vehicle recovery from accidents or breakdowns.</p>
-        </div>
-        <!-- Add more services as needed -->
     </section>
 
-    <!-- Example "Book Tow" Form referencing your server's route -->
-    <section>
+    <!-- "Book Tow" Form -->
+    <section class="book-tow-section">
         <h2>Need a Tow Right Now?</h2>
         <form action="/api/book-tow" method="POST">
             <label for="vehicle">Vehicle Type:</label>
@@ -54,9 +92,16 @@
     </section>
 </main>
 
-<footer>
-    <p>&copy; 2025 Joe’s Towing. All rights reserved.</p>
+<footer id="main-footer">
+    <p>&copy; <span id="year"></span> Joe's Towing. All rights reserved.</p>
 </footer>
 
+<!-- Custom JavaScript -->
+<script src="client/js/main.js"></script>
+<script>
+    // Set the current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
+

@@ -1,8 +1,8 @@
 /* Global Resets & Base Styles */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -27,7 +27,8 @@ body {
     text-decoration: none;
 }
 
-.top-bar-left, .top-bar-right {
+.top-bar-left,
+.top-bar-right {
     display: flex;
     align-items: center;
 }
@@ -44,37 +45,48 @@ body {
     background-color: #b71c1c;
 }
 
-/* Header & Navigation */
-#main-header {
-    background: #eee;
+/* Header, Logo & Navigation */
+header {
+    background-color: #f8f8f8;
+    padding: 1rem 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo img {
+    height: 60px;
 }
 
 .main-nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
-}
-
-.main-nav ul li {
-    margin: 0 1rem;
+    gap: 1.5rem;
 }
 
 .main-nav ul li a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
 }
 
-.main-nav ul li a:hover {
-    color: #d32f2f;
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    background-color: #ddd;
+    border-radius: 4px;
 }
 
 /* Hero Section */
 .hero-section {
     position: relative;
     height: 80vh;
-    background: url("../images/tow-truck-hero.jpg") center/cover no-repeat;
+    /*background: url("../images/tow-truck-hero.jpg") no-repeat center center/cover;*/
     display: flex;
     align-items: center;
     justify-content: center;
@@ -83,8 +95,11 @@ body {
 
 .hero-overlay {
     position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.5); /* Dark overlay */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .hero-content {
@@ -198,6 +213,77 @@ body {
     text-decoration: none;
 }
 
+/* Gallery Preview Section (for index) */
+.gallery-preview-section {
+    padding: 2rem;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.gallery-preview-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.gallery-preview-section .gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.gallery-preview-section .gallery-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Full Gallery Page */
+.gallery-section {
+    padding: 2rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+.gallery-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.gallery-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.05);
+}
+
+/* Button Styles */
+.btn-view-gallery,
+.btn-back-home {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #d32f2f;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.btn-view-gallery:hover,
+.btn-back-home:hover {
+    background-color: #b71c1c;
+}
+
 /* Sticky Header (Optional) */
 .sticky {
     position: fixed;
@@ -205,7 +291,55 @@ body {
     width: 100%;
     z-index: 999;
 }
+/* Header Container Flex Layout */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #f8f8f8; /* Adjust the background as needed */
+}
 
+.brand {
+    display: flex;
+    align-items: center;  /* Vertically center both the image and the text */
+}
+
+.logo-img {
+    height: 60px;          /* Adjust the logo size as needed */
+    margin-right: 0.75rem;  /* Increase margin slightly for more spacing */
+}
+
+.brand-text {
+    font-size: 2rem;       /* Increase font size for more prominence */
+    font-weight: 900;      /* Use a heavier font weight for boldness */
+    color: #333;
+    text-transform: uppercase; /* Optional: makes the text uppercase */
+}
+
+/* Navigation Styles */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    background-color: #ddd;
+    border-radius: 4px;
+}
+
+
+/* Responsive Styles */
 @media (max-width: 768px) {
     .services-container {
         flex-direction: column;
@@ -215,56 +349,9 @@ body {
         flex-direction: column;
     }
 }
+
+/* Icon Styles */
 .fa-phone-volume {
-    font-size: 1.2em; /* or 18px, etc. */
-}
-.fa-phone-volume {
+    font-size: 1.2em;
     color: #d32f2f;
 }
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Navigation Bar */
-.main-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: flex-start;
-    background-color: #f8f8f8;
-}
-
-.main-nav li a {
-    display: block;
-    padding: 1rem;
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-}
-
-.main-nav li a:hover,
-.main-nav li a.active {
-    background-color: #ddd;
-    color: #000;
-}
-
-/* Page Layout Basics */
-header, footer {
-    text-align: center;
-    padding: 1rem 0;
-    background-color: #f8f8f8;
-}
-
-h1, h2 {
-    margin: 1rem 0;
-}
-
-/* Hero Section Example */
-.hero {
-    background: #eee; /* or a background-image */
-    padding: 2rem;
-    text-align: center;
-}
-
-

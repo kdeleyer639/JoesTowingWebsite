@@ -7,10 +7,13 @@
     <meta name="keywords" content="Towing, Beach Recovery, Tow Truck" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Favicon (place favicon.ico inside client/images/) -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
     <!-- Page Title -->
     <title>Joe's Towing | 24/7 Towing & Beach Recovery</title>
 
-    <!-- Your Font Awesome Kit (Replace with your actual kit ID if it differs) -->
+    <!-- Your Font Awesome Kit (Replace with your actual kit ID if needed) -->
     <script src="https://kit.fontawesome.com/6a3880a3d7.js" crossorigin="anonymous"></script>
 
     <!-- Your custom stylesheet -->
@@ -42,17 +45,26 @@
     </div>
 </div>
 
-<!-- Header & Navigation -->
+<!-- Header & Navigation with Logo and Right-Aligned Nav -->
 <header id="main-header">
-    <nav class="main-nav">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-
-    </nav>
+    <div class="header-container">
+        <!-- Logo on the Top Left -->
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.jpg" alt="Joe's Towing Logo" />
+                <span class="brand-text">Joe's Towing & Recovery</span>
+            </a>
+        </div>
+        <!-- Navigation on the Right -->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
 <!-- Hero Section -->
@@ -61,7 +73,6 @@
     <div class="hero-content">
         <h1>24/7 Towing &amp; Beach Recovery</h1>
         <p>Fast, Reliable, and Always Available.</p>
-
         <!-- Contact/Request Form -->
         <form class="hero-form" action="http://localhost:3001/api/request-service" method="POST">
             <input type="text" name="name" placeholder="Your Name" required />
@@ -69,6 +80,19 @@
             <button type="submit">Request Service</button>
         </form>
     </div>
+</section>
+
+<!-- Preview Gallery Section -->
+<section id="gallery-preview" class="gallery-preview-section">
+    <h2>Gallery Highlights</h2>
+    <div class="gallery-container">
+        <!-- Show a selection of images -->
+        <img src="images/towingbronco.jpeg" alt="Towing Bronco" />
+        <img src="images/towingmerc.jpeg" alt="Towing Merc" />
+        <img src="images/towingmustang.jpeg" alt="Towing Mustang" />
+    </div>
+    <!-- Link to Full Gallery -->
+    <p><a href="gallery.html" class="btn-view-gallery">View Full Gallery</a></p>
 </section>
 
 <!-- Services Section -->
@@ -92,6 +116,31 @@
                 <i class="fa-solid fa-car-crash"></i> Auto Recovery
             </h3>
             <p>Safe vehicle recovery from accidents or breakdowns.</p>
+        </div>
+        <!-- Additional Services -->
+        <div class="service-item">
+            <h3>
+                <i class="fa-solid fa-truck-moving"></i> Equipment Hauling
+            </h3>
+            <p>Professional hauling of heavy equipment and machinery.</p>
+        </div>
+        <div class="service-item">
+            <h3>
+                <i class="fa-solid fa-bolt"></i> Jumpstarts
+            </h3>
+            <p>Quick battery jumpstarts to get you back on the road fast.</p>
+        </div>
+        <div class="service-item">
+            <h3>
+                <i class="fa-solid fa-battery-full"></i> Battery Charges
+            </h3>
+            <p>Battery charging and replacement services to keep your vehicle powered up.</p>
+        </div>
+        <div class="service-item">
+            <h3>
+                <i class="fa-solid fa-screwdriver-wrench"></i> Tire Changes &amp; Plugs
+            </h3>
+            <p>Efficient tire changes, repairs, and tire plug services.</p>
         </div>
     </div>
 </section>
@@ -133,7 +182,12 @@
     <p>Designed by [Your Name]</p>
 </footer>
 
-<!-- If you have a main.js file for custom JavaScript -->
+<!-- Custom JavaScript -->
 <script src="client/js/main.js"></script>
+<script>
+    // Set current year in footer dynamically
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
+

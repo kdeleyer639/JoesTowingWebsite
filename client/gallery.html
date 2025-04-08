@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Joe's Towing - Gallery of our towing and recovery services." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joe's Towing | Gallery</title>
+  <!-- Font Awesome Kit -->
+  <script src="https://kit.fontawesome.com/6a3880a3d7.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- Header & Navigation -->
+<header id="main-header">
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Gallery Section -->
+<section id="gallery" class="gallery-section">
+  <h1>Our Gallery</h1>
+  <div class="gallery-container">
+    <img src="images/logo.jpeg" alt="Joe's Towing Logo" />
+    <img src="images/towingbronco.jpeg" alt="Towing Bronco" />
+    <img src="images/towingmerc.jpeg" alt="Towing Merc" />
+    <img src="images/towingmustang.jpeg" alt="Towing Mustang" />
+    <img src="images/towingporsche.jpeg" alt="Towing Porsche" />
+    <img src="images/towingporsche2.jpeg" alt="Towing Porsche 2" />
+    <img src="images/towingRam.jpeg" alt="Towing Ram" />
+  </div>
+  <p><a href="index.html" class="btn-back-home">Back to Home</a></p>
+</section>
+
+<footer id="main-footer">
+  <p>&copy; <span id="year"></span> Joe's Towing. All Rights Reserved.</p>
+  <p>Designed by [Your Name]</p>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
