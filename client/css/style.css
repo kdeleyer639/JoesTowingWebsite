@@ -1,383 +1,346 @@
-/* Global Resets & Base Styles */
-* {
+/* Improved style.css using CSS variables, mobile-first, and refactored for maintainability */
+
+/* 1. CSS Variables */
+:root {
+    --color-primary: #1976d2;
+    --color-primary-dark: #1565c0;
+    --color-text: #333;
+    --color-bg-light: #f8f8f8;
+    --color-bg-alt: #fafafa;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --font-family: Arial, sans-serif;
+}
+
+/* 2. Global Reset & Base */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    color: #333;
+    font-family: var(--font-family);
+    color: var(--color-text);
     line-height: 1.6;
+    background: #fff;
 }
 
-/* Top Bar */
+/* Utility Classes */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--color-primary);
+    color: #fff;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+.btn:hover {
+    background: var(--color-primary-dark);
+}
+
+/* 3. Top Bar */
 .top-bar {
-    background-color: #333;
+    background: var(--color-text);
     color: #fff;
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem 2rem;
     align-items: center;
+    padding: var(--spacing-sm) var(--spacing-lg);
     font-size: 0.9rem;
 }
-
 .top-bar a {
     color: #fff;
     text-decoration: none;
 }
 
-.top-bar-left,
-.top-bar-right {
-    display: flex;
-    align-items: center;
-}
-
-.btn-call-now {
-    background-color: #1976d2; /* Blue */
-    padding: 0.5rem 1rem;
-    margin-left: 1rem;
-    border-radius: 3px;
-    transition: background-color 0.3s ease;
-}
-
-.btn-call-now:hover {
-    background-color: #1565c0; /* Darker blue */
-}
-
-/* Header, Logo & Navigation */
+/* 4. Header & Navigation */
 header {
-    background-color: #f8f8f8;
-    padding: 1rem 0;
+    background: var(--color-bg-light);
 }
-
 .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    background-color: #f8f8f8;
+    padding: var(--spacing-md) var(--spacing-lg);
 }
-
 .brand {
     display: flex;
     align-items: center;
 }
-
 .logo-img {
     height: 60px;
-    margin-right: 0.75rem;
+    margin-right: var(--spacing-md);
 }
-
 .brand-text {
     font-size: 2rem;
     font-weight: 900;
-    color: #333;
+    color: var(--color-text);
     text-transform: uppercase;
 }
-
 .main-nav ul {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: var(--spacing-lg);
 }
-
-.main-nav ul li a {
-    text-decoration: none;
-    color: #333;
+.main-nav a {
     font-weight: bold;
-    padding: 0.5rem 1rem;
-    transition: background-color 0.3s ease;
-}
-
-.main-nav ul li a:hover,
-.main-nav ul li a.active {
-    background-color: #ddd;
+    padding: var(--spacing-sm) var(--spacing-md);
     border-radius: 4px;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+.main-nav a:hover,
+.main-nav a.active {
+    background: #ddd;
 }
 
-/* Hero Section with Background Image */
+/* 5. Hero Section */
 .hero-section {
     position: relative;
-    height: 80vh; /* Full viewport height or adjust as desired */
-    background: url("../images/towingporsche22.jpg") no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     color: #fff;
+    background: url("../images/towingporsche22.jpg") center/cover no-repeat;
+    height: 80vh;
 }
-
-/* Optional: Hero Overlay for Better Readability */
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Adjust opacity as desired */
-    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
 }
-
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     max-width: 600px;
-    text-align: center;
-    padding: 0 1rem;
+    padding: 0 var(--spacing-md);
 }
-
 .hero-content h1 {
     font-size: 2.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-md);
 }
-
 .hero-form {
-    margin-top: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
 }
-
-.hero-form input {
-    padding: 0.75rem;
-    border: none;
-    border-radius: 4px;
-}
-
+.hero-form input,
 .hero-form button {
-    padding: 0.75rem;
+    padding: var(--spacing-sm);
     border: none;
     border-radius: 4px;
-    background-color: #1976d2;
-    color: #fff;
-    cursor: pointer;
     font-size: 1rem;
 }
-
+.hero-form button {
+    background: var(--color-primary);
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
 .hero-form button:hover {
-    background-color: #1565c0;
+    background: var(--color-primary-dark);
 }
 
-/* Services Section */
-.services-section {
-    padding: 2rem;
-    background: #fafafa;
+/* 6. Sections: Services, About, Contact, Gallery Preview */
+section {
+    padding: var(--spacing-lg) var(--spacing-md);
     text-align: center;
 }
-
-.services-section h2 {
-    margin-bottom: 1.5rem;
+.services-section,
+.contact-section,
+.gallery-preview-section {
+    background: var(--color-bg-alt);
+}
+.services-section h2,
+.gallery-preview-section h2 {
     font-size: 2rem;
+    margin-bottom: var(--spacing-md);
+}
+.gallery-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-lg);
 }
 
-.services-container {
+/* 7. Grid Layouts */
+.services-container,
+.gallery-container,
+.gallery-preview-section .gallery-container {
     display: grid;
+    gap: var(--spacing-md);
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    justify-content: center;
-    margin-top: 1rem;
 }
 
+/* 8. Service Items */
 .service-item {
     background: #fff;
     border: 1px solid #ddd;
-    padding: 1rem;
     border-radius: 4px;
-    text-align: center;
+    padding: var(--spacing-md);
+    transition: transform 0.3s ease;
 }
-
+.service-item:hover {
+    transform: translateY(-4px);
+}
 .service-item h3 {
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--spacing-sm);
     font-size: 1.25rem;
 }
 
-/* About Section */
-.about-section {
-    padding: 2rem;
-    text-align: center;
-}
-
-.about-section h2 {
-    margin-bottom: 1rem;
-    font-size: 1.8rem;
-}
-
-/* Contact Section */
-.contact-section {
-    padding: 2rem;
-    background: #fafafa;
-    text-align: center;
-}
-
-.contact-section h2 {
-    margin-bottom: 1rem;
-}
-
-/* Footer */
-#main-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.9rem;
-}
-
-#main-footer a {
-    color: #fff;
-    text-decoration: underline;
-}
-
-#main-footer a:hover {
-    text-decoration: none;
-}
-
-/* Gallery Preview Section (for index) */
-.gallery-preview-section {
-    padding: 2rem;
-    background-color: #f4f4f4;
-    text-align: center;
-}
-
-.gallery-preview-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.gallery-preview-section .gallery-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-
-.gallery-preview-section .gallery-container img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-/* Full Gallery Page */
-.gallery-section {
-    padding: 2rem;
-    background-color: #fff;
-    text-align: center;
-}
-
-.gallery-section h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.gallery-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-}
-
+/* 9. Gallery Images */
 .gallery-container img {
     width: 100%;
-    height: auto;
-    border-radius: 5px;
-    transition: transform 0.3s;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
 }
-
 .gallery-container img:hover {
     transform: scale(1.05);
 }
 
-/* Button Styles */
+/* 10. Buttons: Gallery & Back Home */
 .btn-view-gallery,
-.btn-back-home {
+.btn-back-home,
+.big-call-now {
     display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background-color: #1976d2;
+    background: var(--color-primary);
     color: #fff;
-    text-decoration: none;
+    padding: var(--spacing-md) var(--spacing-lg);
     border-radius: 4px;
-    transition: background-color 0.3s;
+    text-decoration: none;
+    transition: background 0.3s ease;
 }
-
 .btn-view-gallery:hover,
-.btn-back-home:hover {
-    background-color: #1565c0;
+.btn-back-home:hover,
+.big-call-now:hover {
+    background: var(--color-primary-dark);
+}
+.big-call-now {
+    font-size: 2rem;
 }
 
-/* Sticky Header (Optional) */
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 999;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .services-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .main-nav ul {
-        flex-direction: column;
-    }
-}
-
-/* Icon Styles */
-.fa-phone-volume {
-    font-size: 1.2em;
-    color: #1976d2;
-}
-
-/* Social Section Styles */
+/* 11. Social Section */
 .social-section {
-    padding: 2rem;
-    background-color: #e3f2fd;
-    text-align: center;
-    margin-top: 2rem;
+    background: #e3f2fd;
 }
-
 .social-section h2 {
     font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #1976d2;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-primary);
 }
-
-.google-reviews iframe {
-    max-width: 600px;
-    width: 100%;
-    border: none;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-}
-
 .social-links a {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #1976d2;
     text-decoration: none;
+    color: var(--color-primary);
     transition: color 0.3s ease;
 }
-
 .social-links a:hover {
-    color: #1565c0;
-}
-/* Big Call Now Button */
-.big-call-now-section {
-    text-align: center;  /* Center the button horizontally */
-    padding: 2rem 0;
+    color: var(--color-primary-dark);
 }
 
-.big-call-now {
-    display: inline-block;
-    padding: 1rem 2rem;
-    font-size: 2rem;          /* Big font size */
-    font-weight: bold;        /* Bold text */
-    background-color: #1976d2;  /* Blue (primary color) */
+/* 12. Footer */
+#main-footer {
+    background: var(--color-text);
     color: #fff;
+    text-align: center;
+    padding: var(--spacing-md);
+    font-size: 0.9rem;
+}
+#main-footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+#main-footer a:hover {
     text-decoration: none;
+}
+
+/* 13. Responsive Breakpoints */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .main-nav ul {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    .hero-section {
+        height: 60vh;
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    section {
+        padding: var(--spacing-md);
+    }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+}
+@media (max-width: 480px) {
+    .brand-text {
+        font-size: 1.5rem;
+    }
+    .big-call-now {
+        font-size: 1.5rem;
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+}
+/* Header container layout */
+.site-header__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-md) var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Call‑Now button in header */
+.header__call-btn {
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: var(--spacing-sm) var(--spacing-md);
     border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     transition: background-color 0.3s ease;
 }
 
-.big-call-now:hover {
-    background-color: #1565c0;
+.header__call-btn:hover {
+    background-color: var(--color-primary-dark);
+}
+
+/* Mobile: stack nav & button */
+@media (max-width: 768px) {
+    .site-header__container {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        text-align: center;
+    }
 }

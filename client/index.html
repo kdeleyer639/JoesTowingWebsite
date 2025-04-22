@@ -93,11 +93,9 @@
 
 <!-- Social Section: Google Reviews & Instagram -->
 <section id="social" class="social-section">
-    <h2>What Our Customers Say</h2>
-    <div class="google-reviews">
-        <!-- Replace with your actual widget URL or embed code -->
-        <iframe src="URL_TO_GOOGLE_REVIEWS_WIDGET" frameborder="0" scrolling="no" width="100%" height="300"></iframe>
-    </div>
+    <h2>Our Service Area</h2>
+    <div id="map" style="width:100%; height:300px;"></div>
+
     <div class="social-links">
         <a href="https://www.instagram.com/joes_towing_recovery_" target="_blank">
             <i class="fa-brands fa-instagram"></i> Follow us on Instagram
@@ -137,8 +135,15 @@
             <h2><i class="fa-solid fa-screwdriver-wrench"></i> Tire Changes &amp; Plugs</h2>
             <p>Efficient tire changes, repairs, and plug services.</p>
         </div>
+
+        <!-- New Auto Transport Service -->
+        <div class="service-item">
+            <h2><i class="fa-solid fa-shipping-fast"></i> Auto Transport</h2>
+            <p>Secure, professional vehicle transport—local or long‑distance—to get your car where it needs to go.</p>
+        </div>
     </div>
 </section>
+
 
 <!-- Book Tow Form Section -->
 <section class="book-tow-section">
@@ -165,5 +170,61 @@
 <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+
+<script>
+    function initMap() {
+        const map = new google.maps.Map(document.getElementById("map"), {
+            center: { lat: 40.95, lng: -72.30 },
+            zoom: 10
+        });
+
+        // Refined polygon coordinates
+        const coords = [
+
+            // South shore towns
+            { lat: 40.8430, lng: -72.4060 },  // Southampton
+            { lat: 40.8990, lng: -72.2630 },  // Bridgehampton
+            { lat: 40.9270, lng: -72.2160 },  // Sag Harbor
+
+
+            // Out to Montauk Point
+            { lat: 41.0740, lng: -71.8520 },  // Montauk Point
+
+            // Back across the bay
+            { lat: 41.0640, lng: -72.3780 },  // North Haven
+            { lat: 41.0140, lng: -72.5640 },  // East Marion
+
+            // Close the loop
+            { lat: 40.7900, lng: -72.7120 }
+        ];
+
+
+
+
+
+        // Draw the boundary
+        const boundary = new google.maps.Polygon({
+            paths: coords,
+            strokeColor: "#1976d2",
+            strokeOpacity: 1,
+            strokeWeight: 2,
+            fillColor: "#1976d2",
+            fillOpacity: 0.1
+        });
+        boundary.setMap(map);
+
+        // Fit map to the polygon
+        const bounds = new google.maps.LatLngBounds();
+        coords.forEach(pt => bounds.extend(pt));
+        map.fitBounds(bounds);
+    }
+</script>
+
+<!-- Load the Maps API with your key -->
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQzSda_1LTwyP1TNjsFxoA39S2NysYY6o&callback=initMap"
+        async defer
+></script>
+
 </body>
 </html>
