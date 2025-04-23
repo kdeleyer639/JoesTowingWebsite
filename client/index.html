@@ -54,34 +54,36 @@
                 <li><a href="services.html">Services</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
             </ul>
         </nav>
     </div>
 </header>
 
-<!-- Hero Section -->
 <section id="hero" class="hero-section">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-        <div class="hero-heading">
+        <!-- Top overlay: headline, call button & tagline -->
+        <div class="hero-heading hero-text">
             <h1>24/7 Towing &amp; Beach Recovery</h1>
             <a href="tel:6312761056" class="big-call-now">Call Now</a>
+            <p class="hero-tagline">Fast, Reliable, and Always Available.</p>
         </div>
-        <p>Fast, Reliable, and Always Available.</p>
-        <!-- Optionally, keep your request form below if desired -->
-        <form class="hero-form" action="http://localhost:3001/api/request-service" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input type="tel" name="phone" placeholder="Your Phone" required />
-            <button type="submit">Request Service</button>
-        </form>
+
+        <!-- Bottom overlay: service-request form -->
+        <div class="hero-bottom">
+            <a class="hero-tagline">Request Service!</a>
+            <form class="hero-form" action="http://localhost:3001/api/request-service" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required />
+                <input type="tel"  name="phone" placeholder="Your Phone" required />
+                <button type="submit">Request Service</button>
+            </form>
+        </div>
     </div>
 </section>
 
-
-
-
 <!-- Preview Gallery Section -->
-<section id="gallery-preview" class="gallery-preview-section">
+<section id="gallery-preview" class="gallery-preview-section animate-on-scroll">
     <h2>Gallery Highlights</h2>
     <div class="gallery-container">
         <img src="images/towingbronco.jpeg" alt="Towing Bronco" />
@@ -104,7 +106,7 @@
 </section>
 
 <!-- Services Section -->
-<section id="services" class="services-section">
+<section id="services" class="services-section animate-on-scroll">
     <h2>Our Services</h2>
     <div class="services-container">
         <div class="service-item">
@@ -135,15 +137,12 @@
             <h2><i class="fa-solid fa-screwdriver-wrench"></i> Tire Changes &amp; Plugs</h2>
             <p>Efficient tire changes, repairs, and plug services.</p>
         </div>
-
-        <!-- New Auto Transport Service -->
         <div class="service-item">
             <h2><i class="fa-solid fa-shipping-fast"></i> Auto Transport</h2>
             <p>Secure, professional vehicle transport—local or long‑distance—to get your car where it needs to go.</p>
         </div>
     </div>
 </section>
-
 
 <!-- Book Tow Form Section -->
 <section class="book-tow-section">
@@ -167,6 +166,7 @@
 
 <!-- Custom JavaScript -->
 <script src="client/js/main.js"></script>
+<script src="js/app.js"></script>
 <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 </script>
@@ -178,31 +178,16 @@
             zoom: 10
         });
 
-        // Refined polygon coordinates
         const coords = [
-
-            // South shore towns
-            { lat: 40.8430, lng: -72.4060 },  // Southampton
-            { lat: 40.8990, lng: -72.2630 },  // Bridgehampton
-            { lat: 40.9270, lng: -72.2160 },  // Sag Harbor
-
-
-            // Out to Montauk Point
-            { lat: 41.0740, lng: -71.8520 },  // Montauk Point
-
-            // Back across the bay
-            { lat: 41.0640, lng: -72.3780 },  // North Haven
-            { lat: 41.0140, lng: -72.5640 },  // East Marion
-
-            // Close the loop
+            { lat: 40.8430, lng: -72.4060 },
+            { lat: 40.8990, lng: -72.2630 },
+            { lat: 40.9270, lng: -72.2160 },
+            { lat: 41.0740, lng: -71.8520 },
+            { lat: 41.0640, lng: -72.3780 },
+            { lat: 41.0140, lng: -72.5640 },
             { lat: 40.7900, lng: -72.7120 }
         ];
 
-
-
-
-
-        // Draw the boundary
         const boundary = new google.maps.Polygon({
             paths: coords,
             strokeColor: "#1976d2",
@@ -213,18 +198,12 @@
         });
         boundary.setMap(map);
 
-        // Fit map to the polygon
         const bounds = new google.maps.LatLngBounds();
         coords.forEach(pt => bounds.extend(pt));
         map.fitBounds(bounds);
     }
 </script>
 
-<!-- Load the Maps API with your key -->
-<script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQzSda_1LTwyP1TNjsFxoA39S2NysYY6o&callback=initMap"
-        async defer
-></script>
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQzSda_1LTwyP1TNjsFxoA39S2NysYY6o&callback=initMap" async defer></script>
 </body>
 </html>

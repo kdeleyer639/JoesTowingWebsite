@@ -40,6 +40,7 @@ body {
     border: 0;
 }
 
+/* Buttons */
 .btn {
     display: inline-block;
     background: var(--color-primary);
@@ -121,36 +122,71 @@ header {
     justify-content: center;
     text-align: center;
     color: #fff;
-    background: url("../images/towingporsche22.jpg") center/cover no-repeat;
+    background: url("../images/f450.jpg") center/cover no-repeat;
     height: 80vh;
-}
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    border: 5px solid black;
+    box-sizing: border-box;
 }
 .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* push content toward the top */
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    padding-top: 100px; /* adjust this value as needed */
     position: relative;
     z-index: 1;
-    max-width: 600px;
-    padding: 0 var(--spacing-md);
 }
-.hero-content h1 {
+.hero-heading {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 1;
+}
+.hero-heading h1 {
     font-size: 2.5rem;
-    margin-bottom: var(--spacing-md);
+    color: #fff;
+    margin: 0;
+}
+.hero-heading .big-call-now {
+    background: var(--color-primary);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1.25rem;
+}
+.hero-heading .hero-tagline {
+    color: #fff;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* BOTTOM overlay */
+.hero-bottom {
+    position: absolute;
+    bottom: 20px;
+    left: 20%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 200px;
+    z-index: 1;
 }
 .hero-form {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-sm);
-    margin-top: var(--spacing-md);
+    gap: 0.5rem;
 }
 .hero-form input,
 .hero-form button {
-    padding: var(--spacing-sm);
+    width: 100%;
+    padding: 0.75rem;
     border: none;
     border-radius: 4px;
     font-size: 1rem;
@@ -159,13 +195,12 @@ header {
     background: var(--color-primary);
     color: #fff;
     cursor: pointer;
-    transition: background 0.3s ease;
 }
-.hero-form button:hover {
-    background: var(--color-primary-dark);
+.hero-content > p {
+    display: none;
 }
 
-/* 6. Sections: Services, About, Contact, Gallery Preview */
+/* 6. Sections */
 section {
     padding: var(--spacing-lg) var(--spacing-md);
     text-align: center;
@@ -214,13 +249,14 @@ section {
 .gallery-container img {
     width: 100%;
     border-radius: 4px;
+    border: 2px solid black;
     transition: transform 0.3s ease;
 }
 .gallery-container img:hover {
     transform: scale(1.05);
 }
 
-/* 10. Buttons: Gallery & Back Home */
+/* 10. Buttons */
 .btn-view-gallery,
 .btn-back-home,
 .big-call-now {
@@ -241,7 +277,7 @@ section {
     font-size: 2rem;
 }
 
-/* 11. Social Section */
+/* 11. Social */
 .social-section {
     background: #e3f2fd;
 }
@@ -277,7 +313,7 @@ section {
     text-decoration: none;
 }
 
-/* 13. Responsive Breakpoints */
+/* 13. Responsive */
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;
@@ -308,39 +344,64 @@ section {
         padding: var(--spacing-sm) var(--spacing-md);
     }
 }
-/* Header container layout */
-.site-header__container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--spacing-md) var(--spacing-lg);
+
+/* 14. Interactivity Enhancements */
+header.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+.hero-text {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease-in-out;
+}
+.hero-text.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-in-out;
+}
+.animate-on-scroll.slide-up {
+    opacity: 1;
+    transform: translateY(0);
+}
+.image-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
+    z-index: 2000;
 }
-
-/* Call‑Now button in header */
-.header__call-btn {
-    background-color: var(--color-primary);
-    color: #fff;
-    padding: var(--spacing-sm) var(--spacing-md);
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: background-color 0.3s ease;
+.image-popup {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    overflow: hidden;
 }
-
-.header__call-btn:hover {
-    background-color: var(--color-primary-dark);
+.image-popup img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
-
-/* Mobile: stack nav & button */
-@media (max-width: 768px) {
-    .site-header__container {
-        flex-direction: column;
-        gap: var(--spacing-sm);
-        text-align: center;
-    }
+.close-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    background: #000;
+    border-radius: 50%;
+    padding: 0 0.5rem;
+    line-height: 2rem;
 }
