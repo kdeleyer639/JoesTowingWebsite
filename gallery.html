@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Joe's Towing - Gallery of our towing and recovery services." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joe's Towing | Gallery</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <script src="https://kit.fontawesome.com/6a3880a3d7.js" crossorigin="anonymous" defer></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-bar-left">
+    <p class="top-bar-address">
+      <i class="fa-solid fa-location-dot"></i>
+      Located at East Hampton NY 11937
+    </p>
+  </div>
+  <div class="top-bar-right">
+    <p class="top-bar-phone">
+      Call Us:
+      <a href="tel:6312761056">
+        <i class="fa-solid fa-phone-volume"></i> (631) 276-1056
+      </a>
+    </p>
+    <a href="tel:6312761056" class="btn-call-now">
+      <i class="fa-solid fa-phone"></i> Call Now
+    </a>
+  </div>
+</div>
+
+<header id="main-header">
+  <div class="header-container">
+    <div class="brand">
+      <a href="index.html">
+        <img src="images/logo.JPG" alt="Joe's Towing & Recovery" class="logo-img" />
+        <span class="brand-text">Joe's Towing & Recovery</span>
+      </a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section id="gallery" class="gallery-section">
+  <h1>Our Gallery</h1>
+  <div class="gallery-container">
+    <img src="images/towingbronco.jpeg" alt="Towing Bronco" />
+    <img src="images/towingmerc.jpeg" alt="Towing Merc" />
+    <img src="images/towingmustang.jpeg" alt="Towing Mustang" />
+    <img src="images/towingporsche.jpeg" alt="Towing Porsche" />
+    <img src="images/towingporsche2.jpeg" alt="Towing Porsche 2" />
+    <img src="images/towingRam.jpeg" alt="Towing Ram" />
+    <img src="images/bently.jpg" alt="Bentley" />
+    <img src="images/f450.jpg" alt="F-450" />
+  </div>
+
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" class="lightbox-content" alt="Expanded photo" />
+  </div>
+
+  <p><a href="index.html" class="btn-back-home">Back to Home</a></p>
+</section>
+
+<footer id="main-footer">
+  <p>&copy; <span id="year"></span> Joe's Towing. All Rights Reserved.</p>
+  <p>Designed by [Your Name]</p>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
