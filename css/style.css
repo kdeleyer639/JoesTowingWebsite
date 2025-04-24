@@ -405,3 +405,25 @@ header.sticky {
     padding: 0 0.5rem;
     line-height: 2rem;
 }
+/* Button styles */
+.btn-call-now {
+    display: inline-flex;
+    align-items: center;
+    background-color: #1976d2;        /* your blue */
+    color: #fff;                      /* white text */
+    padding: 0.5rem 1rem;             /* vertical & horizontal padding */
+    border-radius: 0.25rem;           /* rounded corners */
+    text-decoration: none;            /* remove underline */
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-call-now i {
+    margin-right: 0.5rem;             /* space between icon & text */
+}
+
+/* Hover state */
+.btn-call-now:hover {
+    background-color: #1565c0;        /* darker blue on hover */
+}
+
